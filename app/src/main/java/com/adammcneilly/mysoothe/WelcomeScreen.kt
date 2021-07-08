@@ -23,7 +23,9 @@ import androidx.compose.ui.unit.dp
 import com.adammcneilly.mysoothe.ui.theme.MySootheTheme
 
 @Composable
-fun WelcomeScreen() {
+fun WelcomeScreen(
+    loginButtonClicked: () -> Unit,
+) {
     Box(
         modifier = Modifier
             .fillMaxSize()
@@ -33,7 +35,8 @@ fun WelcomeScreen() {
 
         ButtonColumn(
             modifier = Modifier
-                .align(Alignment.Center)
+                .align(Alignment.Center),
+            loginButtonClicked = loginButtonClicked,
         )
     }
 }
@@ -41,6 +44,7 @@ fun WelcomeScreen() {
 @Composable
 private fun ButtonColumn(
     modifier: Modifier,
+    loginButtonClicked: () -> Unit,
 ) {
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -59,7 +63,7 @@ private fun ButtonColumn(
         Spacer(modifier = Modifier.height(8.dp))
 
         MySootheButton(
-            onClick = { /*TODO*/ },
+            onClick = loginButtonClicked,
             buttonText = "LOG IN",
             backgroundColor = MaterialTheme.colors.secondary,
         )
@@ -111,6 +115,8 @@ private fun WelcomeBackground() {
 @Composable
 private fun WelcomeScreenPreview() {
     MySootheTheme {
-        WelcomeScreen()
+        WelcomeScreen(
+            loginButtonClicked = {},
+        )
     }
 }

@@ -28,7 +28,9 @@ import androidx.compose.ui.unit.dp
 import com.adammcneilly.mysoothe.ui.theme.MySootheTheme
 
 @Composable
-fun LoginScreen() {
+fun LoginScreen(
+    loginButtonClicked: () -> Unit,
+) {
     Surface(
         modifier = Modifier
             .fillMaxSize(),
@@ -55,7 +57,7 @@ fun LoginScreen() {
             Spacer(modifier = Modifier.height(8.dp))
             
             MySootheButton(
-                onClick = { /*TODO*/ },
+                onClick = loginButtonClicked,
                 buttonText = "LOG IN",
             )
 
@@ -119,6 +121,8 @@ private fun LoginBackground() {
 @Composable
 private fun LoginScreenPreview() {
     MySootheTheme {
-        LoginScreen()
+        LoginScreen(
+            loginButtonClicked = {}
+        )
     }
 }
