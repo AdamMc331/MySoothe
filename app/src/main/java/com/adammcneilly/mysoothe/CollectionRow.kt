@@ -2,7 +2,6 @@ package com.adammcneilly.mysoothe
 
 import android.content.res.Configuration
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.lazy.LazyRow
@@ -14,7 +13,7 @@ import androidx.compose.ui.unit.dp
 import com.adammcneilly.mysoothe.ui.theme.MySootheTheme
 
 @Composable
-fun FavoriteCollectionRow(
+fun CollectionRow(
     collections: List<Collection>,
 ) {
     LazyRow(
@@ -23,7 +22,7 @@ fun FavoriteCollectionRow(
         contentPadding = PaddingValues(horizontal = 16.dp),
     ) {
         items(collections) { collection ->
-            FavoriteCollectionCard(collection)
+            CollectionRowItem(collection)
         }
     }
 }
@@ -37,8 +36,8 @@ fun FavoriteCollectionRow(
     uiMode = Configuration.UI_MODE_NIGHT_NO,
 )
 @Composable
-private fun FavoriteCollectionRowPreview() {
+private fun CollectionRow() {
     MySootheTheme {
-        FavoriteCollectionRow(collections = favoriteCollectionsOne)
+        CollectionRow(collections = favoriteCollectionsOne)
     }
 }

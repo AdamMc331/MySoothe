@@ -11,6 +11,7 @@ import androidx.compose.ui.graphics.vector.ImageVector
 @Composable
 fun MySootheTextField(
     labelText: String,
+    modifier: Modifier = Modifier,
     leadingIcon: ImageVector? = null,
 ) {
     TextField(
@@ -19,7 +20,7 @@ fun MySootheTextField(
         label = {
             Text(labelText)
         },
-        modifier = Modifier.fillMaxWidth(),
+        modifier = modifier.fillMaxWidth(),
         leadingIcon = {
             if (leadingIcon != null) {
                 Icon(

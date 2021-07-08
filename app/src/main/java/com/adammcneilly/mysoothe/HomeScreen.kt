@@ -25,19 +25,55 @@ fun HomeScreen() {
         modifier = Modifier.fillMaxSize(),
         color = MaterialTheme.colors.background,
     ) {
-        Column(
-            modifier = Modifier
-                .padding(horizontal = 16.dp),
-        ) {
+        Column {
             Spacer(modifier = Modifier.height(72.dp))
 
             MySootheTextField(
                 labelText = "Search",
                 leadingIcon = Icons.Default.Search,
+                modifier = Modifier.padding(horizontal = 16.dp),
             )
 
             FavoriteCollectionsSection()
+
+            AlignYourBodySection()
+
+            AlignYourMindSection()
         }
+    }
+}
+
+@Composable
+private fun AlignYourBodySection() {
+    Column(
+        verticalArrangement = Arrangement.spacedBy(8.dp),
+    ) {
+        Text(
+            "ALIGN YOUR BODY",
+            modifier = Modifier
+                .paddingFromBaseline(40.dp)
+                .padding(horizontal = 16.dp),
+            style = MaterialTheme.typography.h2,
+        )
+
+        CollectionRow(collections = alignYourBodyCollections)
+    }
+}
+
+@Composable
+private fun AlignYourMindSection() {
+    Column(
+        verticalArrangement = Arrangement.spacedBy(8.dp),
+    ) {
+        Text(
+            "ALIGN YOUR MIND",
+            modifier = Modifier
+                .paddingFromBaseline(40.dp)
+                .padding(horizontal = 16.dp),
+            style = MaterialTheme.typography.h2,
+        )
+
+        CollectionRow(collections = alignYourMindCollections)
     }
 }
 
@@ -48,7 +84,9 @@ private fun FavoriteCollectionsSection() {
     ) {
         Text(
             "FAVORITE COLLECTIONS",
-            modifier = Modifier.paddingFromBaseline(40.dp),
+            modifier = Modifier
+                .paddingFromBaseline(40.dp)
+                .padding(horizontal = 16.dp),
             style = MaterialTheme.typography.h2,
         )
 
