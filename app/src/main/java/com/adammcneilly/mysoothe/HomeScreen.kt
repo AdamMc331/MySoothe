@@ -60,7 +60,7 @@ private fun HomeScreenContent(
         color = MaterialTheme.colors.background,
     ) {
         Column {
-            Spacer(modifier = Modifier.height(72.dp))
+            Spacer(modifier = Modifier.height(16.dp))
 
             MySootheTextField(
                 labelText = "Search",
